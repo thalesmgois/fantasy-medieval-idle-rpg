@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Fantasy Idle RPG</title>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="panel sidebar left-panel">
+        <div class="section-title">Recursos</div>
+        <div class="resource-grid">
+          <div class="resource-box gold">
+            <span>Ouro</span>
+            <strong id="goldValue">0</strong>
+          </div>
+          <div class="resource-box crystal">
+            <span>Cristais</span>
+            <strong id="crystalValue">0</strong>
+          </div>
+          <div class="resource-box stage">
+            <span>Andar</span>
+            <strong id="stageValue">1</strong>
+          </div>
+        </div>
+
+        <div class="section-title">Equipe</div>
+        <div id="partyList" class="party-list"></div>
+        <button id="hireHeroBtn" class="primary-btn">Contratar Herói</button>
+
+        <div class="section-title">Pet</div>
+        <div id="petPanel" class="pet-panel"></div>
+        <div class="button-row">
+          <button id="rollPetBtn" class="primary-btn">Gerar Pet</button>
+          <button id="upgradePetBtn" class="secondary-btn">Evoluir</button>
+        </div>
+      </aside>
+
+      <main class="panel main-panel">
+        <div class="toolbar">
+          <div class="stage-banner">
+            <span id="stageName">Trilha do Breu</span>
+          </div>
+          <div class="speed-controls">
+            <button class="speed-btn active" data-speed="1">1x</button>
+            <button class="speed-btn" data-speed="5">5x</button>
+            <button class="speed-btn" data-speed="10">10x</button>
+          </div>
+          <button id="nextStageBtn" class="primary-btn">Próximo Andar</button>
+        </div>
+
+        <canvas id="gameCanvas" width="760" height="420"></canvas>
+
+        <div class="battle-strip">
+          <div class="enemy-panel">
+            <div class="enemy-title" id="enemyName">Monstro</div>
+            <div class="hp-wrap">
+              <div id="enemyHealthBar" class="hp-bar"></div>
+            </div>
+            <div class="enemy-meta">
+              <span id="enemyLevel">Nvl 1</span>
+              <span id="enemyHpText">0 / 0</span>
+            </div>
+          </div>
+
+          <div class="log-panel">
+            <div class="section-title small">Combat log</div>
+            <ul id="combatLog"></ul>
+          </div>
+        </div>
+      </main>
+
+      <aside class="panel sidebar right-panel">
+        <div class="section-title">Classe & Evolução</div>
+        <div id="classTree" class="stack-list"></div>
+
+        <div class="section-title">Árvore de Habilidades</div>
+        <div id="skillTree" class="stack-list"></div>
+
+        <div class="section-title">Inventário</div>
+        <div id="inventoryList" class="inventory-list"></div>
+      </aside>
+    </div>
+
+    <script src="game.js"></script>
+  </body>
+</html>
